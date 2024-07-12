@@ -1,0 +1,38 @@
+{
+  "name": "hono-poc",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "bun build src/index.ts --target node --outdir dist",
+    "dev": "NODE_ENV=development tsx watch src/index.ts",
+    "format": "biome format --write . && sort-package-json",
+    "deploy": "./deploy.sh"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "@google-cloud/logging-winston": "^6.0.0",
+    "@google-cloud/storage": "^7.11.3",
+    "@hono/node-server": "^1.12.0",
+    "@hono/swagger-ui": "^0.4.0",
+    "@hono/zod-openapi": "^0.14.9",
+    "@types/node": "^20.11.17",
+    "busboy": "^1.6.0",
+    "hono": "^4.4.13",
+    "pretty-bytes": "^6.1.1",
+    "pretty-ms": "^9.0.0",
+    "tsx": "^4.7.1",
+    "ulid": "^2.3.0",
+    "vite": "^5.3.3",
+    "winston": "^3.13.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/bun": "latest",
+    "@types/busboy": "^1.5.4",
+    "sort-package-json": "^2.10.0",
+    "typescript": "^5.5.3"
+  }
+}

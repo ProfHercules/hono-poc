@@ -1,0 +1,71 @@
+{
+  "info": {
+    "title": "An API",
+    "version": "v1"
+  },
+  "openapi": "3.0.0",
+  "components": {
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/files": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "filename": {
+                    "type": "string"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "filename",
+                  "file"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "File uploaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "heapUsed": {
+                      "type": "string"
+                    },
+                    "heapTotal": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "string"
+                    },
+                    "gcsUri": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "heapUsed",
+                    "heapTotal",
+                    "time",
+                    "gcsUri"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
